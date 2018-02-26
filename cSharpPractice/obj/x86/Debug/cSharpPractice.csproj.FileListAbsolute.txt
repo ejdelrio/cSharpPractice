@@ -1,0 +1,5 @@
+/Users/Eddie/projects/cSharpPractice/cSharpPractice/bin/Debug/cSharpPractice.exe
+/Users/Eddie/projects/cSharpPractice/cSharpPractice/bin/Debug/cSharpPractice.pdb
+/Users/Eddie/projects/cSharpPractice/cSharpPractice/obj/x86/Debug/cSharpPractice.csproj.CoreCompileInputs.cache
+/Users/Eddie/projects/cSharpPractice/cSharpPractice/obj/x86/Debug/cSharpPractice.exe
+/Users/Eddie/projects/cSharpPractice/cSharpPractice/obj/x86/Debug/cSharpPractice.pdb
