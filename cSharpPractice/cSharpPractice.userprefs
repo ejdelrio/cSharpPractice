@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{94B862B2-6283-4FBF-9BB0-EC5E991468D9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BSTNode.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="PersonTrieTree.cs">
     <Files>
-      <File FileName="Program.cs" Line="26" Column="25" />
-      <File FileName="Matrix.cs" Line="52" Column="48" />
-      <File FileName="BSTNode.cs" Line="44" Column="9" />
-      <File FileName="Contact.cs" Line="6" Column="12" />
-      <File FileName="PersonTrieTree.cs" Line="22" Column="6" />
+      <File FileName="Program.cs" Line="14" Column="37" />
+      <File FileName="Matrix.cs" Line="35" Column="43" />
+      <File FileName="BSTNode.cs" Line="8" Column="18" />
+      <File FileName="Contact.cs" Line="7" Column="29" />
+      <File FileName="PersonTrieTree.cs" Line="27" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +13,7 @@
           <Node name="cSharpPractice" expanded="True">
             <Node name="cSharpPractice" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="BSTNode.cs" selected="True" />
+              <Node name="PersonTrieTree.cs" selected="True" />
             </Node>
           </Node>
         </State>

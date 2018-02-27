@@ -39,7 +39,7 @@ namespace cSharpPractice
       Console.WriteLine(("\n--------------"));
     }
 
-    private void flipMatrix()
+    void flipMatrix()
     {
       //Flips the matrix horizantally
       for (int i = 0, j = dim - 1; i < j; i++, j--)

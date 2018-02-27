@@ -4,7 +4,7 @@ namespace cSharpPractice
 {
   class MainClass
   {
-    public static void Main(string[] args)
+    public static void Main()
     {
       Matrix m = new Matrix(8);
       m.printMatrix();
@@ -13,11 +13,12 @@ namespace cSharpPractice
 
       BSTNode root = new BSTNode(6);
       root.printTree();
-      int[] sortedArr = new int[] { 2, 3, 4, 5, 6, 7, 8};
+      int[] sortedArr = { 2, 3, 4, 5, 6, 7, 8};
       BSTNode treeFromArr = BSTNode.BuildFromSortedArr(sortedArr);
       treeFromArr.printTree();
 
       PersonTrieTree contactBook = new PersonTrieTree();
+
       contactBook.AddContact("Eddie", 7604683448);
       contactBook.AddContact("Eric", 2342342345);
       contactBook.AddContact("Edgar", 6666666666);

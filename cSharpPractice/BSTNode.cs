@@ -5,8 +5,8 @@ namespace cSharpPractice
   public class BSTNode
   {
     int val;
-    BSTNode left = null;
-    BSTNode right = null;
+    BSTNode left;
+    BSTNode right;
 
     public BSTNode(int val) 
     {
@@ -17,15 +17,15 @@ namespace cSharpPractice
       if (this.val == val) throw new ArgumentException("Duplicate values forbidden.");
       if(this.val > val) {
         
-        if (this.left != null) return this.left.AddNode((val));
-        this.left = new BSTNode(val);
-        return this.left;
+        if (left != null) return left.AddNode((val));
+        left = new BSTNode(val);
+        return left;
 
       } else {
         
-        if (this.right != null) return this.right.AddNode(val);
-        this.right = new BSTNode(val);
-        return this.right;
+        if (right != null) return right.AddNode(val);
+        right = new BSTNode(val);
+        return right;
 
       }
     }
