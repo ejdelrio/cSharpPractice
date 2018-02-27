@@ -34,7 +34,7 @@ namespace cSharpPractice
       List<BSTNode> nodeList = new List<BSTNode>();
 
       nodeList.Add(this);
-
+      //Performs a level order traversal and prints each value by level.
       while(nodeList.Count > 0) {
         BSTNode currentNode = nodeList[0];
         nodeList.RemoveAt(0);
@@ -52,8 +52,8 @@ namespace cSharpPractice
       BSTNode root = new BSTNode(arr[middle]);
 
       BSTNode BuildTreeRecursion(int start, int end) {
+        
         int mid = ((end - start) / 2 + start);
-        Console.WriteLine("__MIDDLE__: " + mid);
         BSTNode childNode = new BSTNode(arr[mid]);
         if (start <= mid - 1) childNode.left = BuildTreeRecursion(start, mid - 1);
         if (mid + 1 <= end) childNode.right = BuildTreeRecursion(mid + 1, end);

@@ -17,6 +17,15 @@ namespace cSharpPractice
       BSTNode treeFromArr = BSTNode.BuildFromSortedArr(sortedArr);
       treeFromArr.printTree();
 
+      PersonTrieTree contactBook = new PersonTrieTree();
+      contactBook.AddContact("Eddie", 7604683448);
+      contactBook.AddContact("Eric", 2342342345);
+      contactBook.AddContact("Edgar", 6666666666);
+      contactBook.AddContact("Sylvia", 6306742391);
+      contactBook.AddContact("Emily", 4444444444);
+      contactBook.AddContact("Edwin", 4168906994);
+
+      contactBook.displayFuzzySearchresults("E");
 
     }
   }
