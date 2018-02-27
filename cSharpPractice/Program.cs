@@ -6,7 +6,7 @@ namespace cSharpPractice
   {
     public static void Main(string[] args)
     {
-      Matrix m = new Matrix(4);
+      Matrix m = new Matrix(8);
       m.printMatrix();
       m.rotateMatrix();
       m.printMatrix();
@@ -25,7 +25,7 @@ namespace cSharpPractice
       contactBook.AddContact("Emily", 4444444444);
       contactBook.AddContact("Edwin", 4168906994);
 
-      contactBook.displayFuzzySearchresults("p");
+      contactBook.displayFuzzySearchresults("E");
 
     }
   }

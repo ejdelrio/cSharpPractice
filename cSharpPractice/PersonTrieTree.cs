@@ -4,13 +4,8 @@ namespace cSharpPractice
 {
   public class PersonTrieTree
   {
-
+    //Mimics searching through contacts using a fuzzy search :D
     Dictionary<char, PersonTrieNode> root = new Dictionary<char, PersonTrieNode> { };
-
-
-    public PersonTrieTree()
-    {
-    }
 
     private class PersonTrieNode 
     {
@@ -26,7 +21,8 @@ namespace cSharpPractice
 
       PersonTrieTree RecursiveNodePopulation(char alpha, int ind, PersonTrieNode node) {
 
-        if(ind == name.Length - 1) {
+        if(ind == name.Length - 1) 
+        {
           if (node.content != null) throw new ArgumentException("Duplicate contact names forbidden");
           node.content = new Contact(name, phone);
           return this;
@@ -40,13 +36,11 @@ namespace cSharpPractice
 
         return RecursiveNodePopulation(nextChar, ind + 1, node.children[nextChar]);
       }
-
+     
       return RecursiveNodePopulation(firstChar, 0, root[firstChar]);
-
     }
 
-
-    public List<Contact> FuzzySearch(string search) 
+    public List<Contact> fuzzySearch(string search) 
     {
       //Performs fuzzy search. 
       //If you type E, it will return all contacts with a name that starts with E
@@ -58,13 +52,12 @@ namespace cSharpPractice
       if(!root.ContainsKey(currentChar)) return output;
       if (root[currentChar].content != null) output.Add(root[currentChar].content);
 
-
       List < Contact > RecursiveNodeSearch(int ind, PersonTrieNode node) {
         bool endOfString = ind >= search.Length - 1;
         bool hasContent = node.content != null;
 
-
-        if (!endOfString) {
+        if (!endOfString) 
+        {
           return node.children.ContainsKey(search[ind + 1]) ?
                      RecursiveNodeSearch(ind + 1, node.children[search[ind + 1]]) :
                      output;
@@ -81,14 +74,15 @@ namespace cSharpPractice
       return RecursiveNodeSearch(0, root[currentChar]);
     }
 
-
     public void displayFuzzySearchresults(string search)
     {
-      
-      List<Contact> searchResults = FuzzySearch(search);
+      List<Contact> searchResults = fuzzySearch(search);
       if (searchResults.Count == 0) return;
-      for (int i = 0; i < searchResults.Count; i++) {
-        Console.WriteLine(searchResults[i].name);
+
+      for (int i = 0; i < searchResults.Count; i++) 
+      {
+        Console.Write(searchResults[i].name + " : ");
+        Console.Write(searchResults[i].phoneNumber + "\n");
       }
     }
   }

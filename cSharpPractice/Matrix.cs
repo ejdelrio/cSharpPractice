@@ -14,9 +14,11 @@ namespace cSharpPractice
       this.dim = dim;
       Random rnd = new Random();
 
-      for (int i = 0; i < dim; i++) {
+      for (int i = 0; i < dim; i++) 
+      {
         int[] innerArr = new int[dim];
-        for (int j = 0; j < dim; j++) {
+        for (int j = 0; j < dim; j++) 
+        {
           innerArr[j] = rnd.Next(1, 10);
         }
         matrix[i] = innerArr;
@@ -26,8 +28,10 @@ namespace cSharpPractice
 
     public void printMatrix() {
       
-      for (int i = 0; i < dim; i++) {
-        for (int j = 0; j < dim; j++) {
+      for (int i = 0; i < dim; i++) 
+      {
+        for (int j = 0; j < dim; j++) 
+        {
           Console.Write(body[i][j] + " ");
         }
         Console.Write("\n");
@@ -50,7 +54,7 @@ namespace cSharpPractice
     public void rotateMatrix()
     {
       //Rotates the matrix 90 degrees clockwise in place
-      this.flipMatrix();
+      flipMatrix();
 
       for (int i = 0; i < dim; i++)
       {
