@@ -38,8 +38,10 @@ namespace cSharpPractice
       while(nodeList.Count > 0) {
         BSTNode currentNode = nodeList[0];
         nodeList.RemoveAt(0);
+
         if (currentNode.left != null) nodeList.Add(currentNode.left);
         if (currentNode.right != null) nodeList.Add(currentNode.right);
+
         Console.WriteLine(currentNode.val); 
       }
     }
@@ -55,10 +57,11 @@ namespace cSharpPractice
         
         int mid = ((end - start) / 2 + start);
         BSTNode childNode = new BSTNode(arr[mid]);
+
         if (start <= mid - 1) childNode.left = BuildTreeRecursion(start, mid - 1);
         if (mid + 1 <= end) childNode.right = BuildTreeRecursion(mid + 1, end);
-        return childNode;
 
+        return childNode;
       }
 
       root.left = BuildTreeRecursion(0, middle - 1);

@@ -9,6 +9,7 @@ namespace cSharpPractice
 
     public Matrix(int dim)
     {
+      //Generates a square jagged matrix with random integers
       int[][] matrix = new int[dim][];
       this.dim = dim;
       Random rnd = new Random();
@@ -24,7 +25,7 @@ namespace cSharpPractice
     }
 
     public void printMatrix() {
-
+      
       for (int i = 0; i < dim; i++) {
         for (int j = 0; j < dim; j++) {
           Console.Write(body[i][j] + " ");
@@ -36,6 +37,7 @@ namespace cSharpPractice
 
     private void flipMatrix()
     {
+      //Flips the matrix horizantally
       for (int i = 0, j = dim - 1; i < j; i++, j--)
       {
         int[] innerArr = body[i];
@@ -47,6 +49,7 @@ namespace cSharpPractice
 
     public void rotateMatrix()
     {
+      //Rotates the matrix 90 degrees clockwise
       this.flipMatrix();
 
       for (int i = 0; i < dim; i++)

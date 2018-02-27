@@ -12,13 +12,14 @@ namespace cSharpPractice
     {
     }
 
-    private class PersonTrieNode {
+    private class PersonTrieNode 
+    {
       public Contact content = null;
       public Dictionary<char, PersonTrieNode> children = new Dictionary<char, PersonTrieNode> {};
     }
 
-    public PersonTrieTree AddContact(string name, long phone) {
-      
+    public PersonTrieTree AddContact(string name, long phone) 
+    {
       if (name.Length - 1 <= 0) throw new ArgumentException("String must have a length greater than 0");
       char firstChar = name[0];
       if (!root.ContainsKey(firstChar)) root.Add(firstChar, new PersonTrieNode());
@@ -44,23 +45,25 @@ namespace cSharpPractice
 
     }
 
-    public List<Contact> FuzzySearch(string name) {
-      if (name.Length == 0) throw new ArgumentException("Name must have length greater than 0");
+
+    public List<Contact> FuzzySearch(string search) 
+    {
+      if (search.Length == 0) throw new ArgumentException("Name must have length greater than 0");
       List < Contact > output = new List<Contact> { };
-      char currentChar = name[0];
+      char currentChar = search[0];
+
       if(!root.ContainsKey(currentChar)) return output;
       if (root[currentChar].content != null) output.Add(root[currentChar].content);
 
 
       List < Contact > RecursiveNodeSearch(int ind, PersonTrieNode node) {
-        bool endOfString = ind >= name.Length - 1;
+        bool endOfString = ind >= search.Length - 1;
         bool hasContent = node.content != null;
 
 
         if (!endOfString) {
-          Console.WriteLine("__CURRENT_CHAR__: " + name[ind + 1]);
-          return node.children.ContainsKey(name[ind + 1]) ?
-                     RecursiveNodeSearch(ind + 1, node.children[name[ind + 1]]) :
+          return node.children.ContainsKey(search[ind + 1]) ?
+                     RecursiveNodeSearch(ind + 1, node.children[search[ind + 1]]) :
                      output;
         }
 
@@ -72,12 +75,15 @@ namespace cSharpPractice
         return output;
       }
 
-      return RecursiveNodeSearch(1, root[currentChar]);
+      return RecursiveNodeSearch(0, root[currentChar]);
     }
 
-    public void displayFuzzySearchresults(string name)
+
+    public void displayFuzzySearchresults(string search)
     {
-      List<Contact> searchResults = FuzzySearch(name);
+      
+      List<Contact> searchResults = FuzzySearch(search);
+      if (searchResults.Count == 0) return;
       for (int i = 0; i < searchResults.Count; i++) {
         Console.WriteLine(searchResults[i].name);
       }

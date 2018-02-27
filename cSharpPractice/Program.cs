@@ -25,7 +25,7 @@ namespace cSharpPractice
       contactBook.AddContact("Emily", 4444444444);
       contactBook.AddContact("Edwin", 4168906994);
 
-      contactBook.displayFuzzySearchresults("E");
+      contactBook.displayFuzzySearchresults("p");
 
     }
   }
