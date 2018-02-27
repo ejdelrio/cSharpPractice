@@ -49,7 +49,7 @@ namespace cSharpPractice
 
     public void rotateMatrix()
     {
-      //Rotates the matrix 90 degrees clockwise
+      //Rotates the matrix 90 degrees clockwise in place
       this.flipMatrix();
 
       for (int i = 0; i < dim; i++)

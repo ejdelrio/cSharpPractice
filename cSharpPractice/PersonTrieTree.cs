@@ -48,6 +48,9 @@ namespace cSharpPractice
 
     public List<Contact> FuzzySearch(string search) 
     {
+      //Performs fuzzy search. 
+      //If you type E, it will return all contacts with a name that starts with E
+      //If you type Ed, it will return all contacts that starts with Ed and etc....
       if (search.Length == 0) throw new ArgumentException("Name must have length greater than 0");
       List < Contact > output = new List<Contact> { };
       char currentChar = search[0];
