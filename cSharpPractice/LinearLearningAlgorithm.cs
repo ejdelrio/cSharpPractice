@@ -43,7 +43,7 @@ namespace cSharpPractice
     int CalculateDeviation(int[] row) {
       int yActual = row[row.Length - 1];
       int yHypothetical = Hypothesis(row);
-      return yActual - yHypothetical;
+      return (yActual - yHypothetical) ^ 2;
     }
 
     int CalculateDeviationSum() {
