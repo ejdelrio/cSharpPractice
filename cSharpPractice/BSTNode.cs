@@ -46,37 +46,32 @@ namespace cSharpPractice
     }
 
     public static BSTNode BuildFromSortedArr(int[] arr) {
-      
-      int generateMiddle (int start, int end) {
+      if (arr.Length == 0) throw new ArgumentException("Array must not be empty");
+
+      int previousVal = arr[0];
+      for (int i = 1; i < arr.Length; i++)
+      {
+        int val = arr[i];
+        if (val < previousVal) throw new ArgumentException("Array must be sorted.");
+      }
+
+      int generateMiddle(int start, int end)
+      {
         int range = end - start;
         int rounder = range % 2 != 0 ? 1 : 0;
         return (range / 2 + start) + rounder;
       }
 
-      bool isArraySorted(int[] sortedArr) {
-        int previousVal = sortedArr[0];
-
-        for (int i = 1; i < sortedArr.Length; i++) {
-          int val = sortedArr[i];
-          if (val < previousVal) return false;
-        }
-        return true;
-      }
-
-      if (arr.Length == 0) throw new ArgumentException("Array must not be empty");
-      if (!isArraySorted(arr)) throw new ArgumentException("Array must be sorted.");
-
-      BSTNode BuildTreeRecursion(int start, int end) {
-
+      BSTNode BuildTreeRecursion(int start, int end)
+      {
         int mid = generateMiddle(start, end);
-    
+
         BSTNode childNode = new BSTNode(arr[mid]);
         if (start <= mid - 1) childNode.left = BuildTreeRecursion(start, mid - 1);
         if (mid + 1 <= end) childNode.right = BuildTreeRecursion(mid + 1, end);
         return childNode;
 
       }
-
 
       return BuildTreeRecursion(0, arr.Length - 1);
     }

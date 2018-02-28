@@ -38,6 +38,7 @@
     <Compile Include="BSTNode.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="PersonTrieTree.cs" />
+    <Compile Include="LinearLearningAlgorithm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

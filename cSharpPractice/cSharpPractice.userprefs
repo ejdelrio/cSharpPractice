@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{94B862B2-6283-4FBF-9BB0-EC5E991468D9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinearMachineLearningAlgorithm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinearLearningAlgorithm.cs">
     <Files>
-      <File FileName="Program.cs" Line="22" Column="51" />
+      <File FileName="Program.cs" Line="13" Column="7" />
       <File FileName="Matrix.cs" Line="35" Column="43" />
-      <File FileName="BSTNode.cs" Line="8" Column="18" />
+      <File FileName="BSTNode.cs" Line="74" Column="8" />
       <File FileName="Contact.cs" Line="7" Column="29" />
       <File FileName="PersonTrieTree.cs" Line="19" Column="32" />
-      <File FileName="LinearMachineLearningAlgorithm.cs" Line="7" Column="10" />
+      <File FileName="LinearMachineLearningAlgorithm.cs" Line="18" Column="6" />
+      <File FileName="LinearLearningAlgorithm.cs" Line="8" Column="7" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,7 @@
           <Node name="cSharpPractice" expanded="True">
             <Node name="cSharpPractice" expanded="True">
               <Node name="Properties" expanded="True" />
-              <Node name="LinearMachineLearningAlgorithm.cs" selected="True" />
+              <Node name="LinearLearningAlgorithm.cs" selected="True" />
             </Node>
           </Node>
         </State>
