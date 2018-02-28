@@ -77,6 +77,7 @@ namespace cSharpPractice
     public void displayFuzzySearchresults(string search)
     {
       List<Contact> searchResults = fuzzySearch(search);
+      List<int[]> testList = new List<int[]> { };
       if (searchResults.Count == 0) return;
 
       for (int i = 0; i < searchResults.Count; i++) 

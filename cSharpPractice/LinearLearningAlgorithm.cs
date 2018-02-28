@@ -1,12 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace cSharpPractice
 {
   public class LinearLearningAlgorithm
   {
 
     int[] theta;
-    int[][] data;
+    List<int[]> data = new List<int[]>();
     int alpha;
+    int lambda;
+
+
+    public List<int[]> AddDataRow(int [] row) {
+      data.Add(row);
+      return data;
+    }
 
     public void SetTheta(int[] arr) 
     {
@@ -15,6 +23,19 @@ namespace cSharpPractice
 
     public int[] GetTheta() {
       return theta;
+    }
+
+    public void SetLambda(int val)
+    {
+      lambda = val;
+    }
+
+    public int GetLambda() {
+      return lambda;
+    }
+
+    public int Regularization() {
+      return 5;
     }
 
     public void SetAlpha (int val) 
@@ -49,7 +70,7 @@ namespace cSharpPractice
     int CalculateDeviationSum() {
       int sum = 0;
 
-      for (int i = 0; i < data.Length; i++) {
+      for (int i = 0; i < data.Count; i++) {
         int[] row = data[i];
         sum += CalculateDeviation(row);
       }
@@ -66,7 +87,7 @@ namespace cSharpPractice
     int CalculateDerivedDeveationSum(int ind) {
       int sum = 0;
 
-      for (int i = 0; i < data.Length; i++)
+      for (int i = 0; i < data.Count; i++)
       {
         int[] row = data[i];
         sum += CalculateDerivedDeveation(ind, row);
@@ -75,7 +96,7 @@ namespace cSharpPractice
     }
 
     int CalculateCost(int ind) {
-      int m = data.Length;
+      int m = data.Count;
       int TotalError = CalculateDeviationSum();
       return TotalError / (ind * m);
     }
