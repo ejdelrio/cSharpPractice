@@ -13,8 +13,10 @@ namespace cSharpPractice
 
       BSTNode root = new BSTNode(6);
       root.printTree();
-      int[] sortedArr = { 2, 3, 4, 5, 6, 7, 8};
+      int[] sortedArr = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+      int[] unsortedArr = { 3, 2, 4, 1, 6 };
       BSTNode treeFromArr = BSTNode.BuildFromSortedArr(sortedArr);
+      //BSTNode willThrowError = BSTNode.BuildFromSortedArr(unsortedArr);
       treeFromArr.printTree();
 
       PersonTrieTree contactBook = new PersonTrieTree();
@@ -26,7 +28,7 @@ namespace cSharpPractice
       contactBook.AddContact("Emily", 4444444444);
       contactBook.AddContact("Edwin", 4168906994);
 
-      contactBook.displayFuzzySearchresults("E");
+      contactBook.displayFuzzySearchresults("Ed");
 
     }
   }
