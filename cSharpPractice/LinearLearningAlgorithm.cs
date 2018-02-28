@@ -39,28 +39,52 @@ namespace cSharpPractice
       }
       return sum;
     }
-    int CalculateDeviation(int[] row) 
-    {
-      int yValActual = row[row.Length - 1];
-      int yValHypothetical = Hypothesis(row);
-      return yValHypothetical - yValActual;
+
+    int CalculateDeviation(int[] row) {
+      int yActual = row[row.Length - 1];
+      int yHypothetical = Hypothesis(row);
+      return yActual - yHypothetical;
     }
 
-    int CostFunction(int[] row) 
-    {
-      
-      int dataSize = data.Length;
-      int deviation = CalculateDeviation(row);
+    int CalculateDeviationSum() {
+      int sum = 0;
 
-      return (deviation ^ 2) / (2 * dataSize);
+      for (int i = 0; i < data.Length; i++) {
+        int[] row = data[i];
+        sum += CalculateDeviation(row);
+      }
+      return sum;
     }
 
-    int DerivedCostFunction(int ind, int[] row) 
-    {
-      int dataSize = data.Length;
+    int CalculateDerivedDeveation(int ind, int [] row) {
       int outerXVal = ind == 0 ? 1 : row[ind - 1];
-      int deviation = CalculateDeviation(row);
-      return (outerXVal * deviation) / dataSize;
+      int yActual = row[row.Length - 1];
+      int yHypothetical = Hypothesis(row);
+      return (yActual - yHypothetical) * outerXVal;
     }
+
+    int CalculateDerivedDeveationSum(int ind) {
+      int sum = 0;
+
+      for (int i = 0; i < data.Length; i++)
+      {
+        int[] row = data[i];
+        sum += CalculateDerivedDeveation(ind, row);
+      }
+      return sum;
+    }
+
+    int CalculateCost(int ind) {
+      int m = data.Length;
+      int TotalError = CalculateDeviationSum();
+      return TotalError / (ind * m);
+    }
+
+    int SingleGradientStep(int ind) {
+      int thetaVal = theta[ind];
+      int cost = CalculateCost(1);
+      return thetaVal - alpha * cost;
+    }
+   
   }
 }
