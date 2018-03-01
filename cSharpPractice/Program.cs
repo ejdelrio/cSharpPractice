@@ -39,7 +39,7 @@ namespace cSharpPractice
       //Practie with enumerators :D
       var firstEnumVal = firstEnum.first;
       var fifthEnumVal = firstEnum.fifth;
-      Console.WriteLine((int) firstEnumVal);
+      Console.WriteLine((int)firstEnumVal);
 
       Console.WriteLine(fifthEnumVal);
       Console.WriteLine((int)fifthEnumVal);
@@ -54,9 +54,28 @@ namespace cSharpPractice
 
       Console.WriteLine(toTheFirst);
       Console.WriteLine(toTheThird);
-  
+
+      //Practice with multi-dimensional arrays
+
+      int[,,] multiDimArray = new int[3, 4, 2];
+      int dims = multiDimArray.Rank;
+      for (int i = 0; i < dims; i++)
+      {
+        Console.WriteLine(multiDimArray.GetLength(i));
+      }
+
+      //Callback example :D;
+      Console.WriteLine();
+      Console.WriteLine(callBackExample(5, 3, (a, b) => a + b));
+      Console.WriteLine(callBackExample(5, 3, (a, b) => a * b));
+      Console.WriteLine(callBackExample(5, 3, (a, b) => a - b));
+
+
+
+
+
     }
-    public static void variableNumberOfArguments(int num, params string[] args) 
+    public static void variableNumberOfArguments(int num, params string[] args)
     {
       for (int i = 0; i < args.Length; i++)
       {
@@ -64,8 +83,15 @@ namespace cSharpPractice
       }
     }
 
-    public static int defaultParamterExample(int num, int pow = 1){
+    public static int defaultParamterExample(int num, int pow = 1)
+    {
       return (int)Math.Pow(num, pow);
+    }
+
+    public delegate int CallBack(int a, int b);
+
+    public static int callBackExample(int a, int b, CallBack cb) {
+      return cb(a, b);
     }
 
   }
