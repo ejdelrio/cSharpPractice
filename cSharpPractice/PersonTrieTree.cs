@@ -45,7 +45,6 @@ namespace cSharpPractice
 
 
 
-
     public List<Contact> fuzzySearch(string search) 
     {
       //Performs fuzzy search. 
