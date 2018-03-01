@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{94B862B2-6283-4FBF-9BB0-EC5E991468D9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FirstEnum.cs">
     <Files>
       <File FileName="PersonTrieTree.cs" Line="24" Column="36" />
-      <File FileName="Program.cs" Line="9" Column="1" />
+      <File FileName="Program.cs" Line="39" Column="3" />
+      <File FileName="FirstEnum.cs" Line="6" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
