@@ -7,11 +7,13 @@ namespace cSharpPractice
     //Mimics searching through contacts using a fuzzy search :D
     Dictionary<char, PersonTrieNode> root = new Dictionary<char, PersonTrieNode> { };
 
-    private class PersonTrieNode 
+    class PersonTrieNode 
     {
       public Contact content = null;
       public Dictionary<char, PersonTrieNode> children = new Dictionary<char, PersonTrieNode> {};
     }
+
+
 
     public PersonTrieTree AddContact(string name, long phone) 
     {
@@ -19,7 +21,8 @@ namespace cSharpPractice
       char firstChar = name[0];
       if (!root.ContainsKey(firstChar)) root.Add(firstChar, new PersonTrieNode());
 
-      PersonTrieTree RecursiveNodePopulation(char alpha, int ind, PersonTrieNode node) {
+      PersonTrieTree RecursiveNodePopulation(char alpha, int ind, PersonTrieNode node) 
+      {
 
         if(ind == name.Length - 1) 
         {
@@ -40,6 +43,9 @@ namespace cSharpPractice
       return RecursiveNodePopulation(firstChar, 0, root[firstChar]);
     }
 
+
+
+
     public List<Contact> fuzzySearch(string search) 
     {
       //Performs fuzzy search. 
@@ -52,7 +58,8 @@ namespace cSharpPractice
       if(!root.ContainsKey(currentChar)) return output;
       if (root[currentChar].content != null) output.Add(root[currentChar].content);
 
-      List < Contact > RecursiveNodeSearch(int ind, PersonTrieNode node) {
+      List < Contact > RecursiveNodeSearch(int ind, PersonTrieNode node) 
+      {
         bool endOfString = ind >= search.Length - 1;
         bool hasContent = node.content != null;
 
@@ -63,7 +70,8 @@ namespace cSharpPractice
                      output;
         }
 
-        foreach (KeyValuePair<char, PersonTrieNode> entry in node.children) {
+        foreach (KeyValuePair<char, PersonTrieNode> entry in node.children) 
+        {
           RecursiveNodeSearch(ind + 1, entry.Value);
         }
         if (hasContent) output.Add(node.content);
@@ -73,6 +81,8 @@ namespace cSharpPractice
 
       return RecursiveNodeSearch(0, root[currentChar]);
     }
+
+
 
     public void displayFuzzySearchresults(string search)
     {

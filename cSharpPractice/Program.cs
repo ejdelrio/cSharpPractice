@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security;
 
 namespace cSharpPractice
 {
@@ -43,12 +44,30 @@ namespace cSharpPractice
       Console.WriteLine(fifthEnumVal);
       Console.WriteLine((int)fifthEnumVal);
 
-      //Console.practice
-      Console.WriteLine("Please Enter your name :D");
-      string name = Console.ReadLine();
-      Console.WriteLine(string.Format("Hello {0}!!!! Nice to meet you", name));
+      //Practice with variable number of  arguments :D
+      variableNumberOfArguments(5, "Bacon", "Turtle", "Donkey");
+
+      //Practice witgh default parameters :D
+
+      int toTheFirst = defaultParamterExample(5);
+      int toTheThird = defaultParamterExample(5, 3);
+
+      Console.WriteLine(toTheFirst);
+      Console.WriteLine(toTheThird);
   
     }
+    public static void variableNumberOfArguments(int num, params string[] args) 
+    {
+      for (int i = 0; i < args.Length; i++)
+      {
+        Console.WriteLine(args[i]);
+      }
+    }
+
+    public static int defaultParamterExample(int num, int pow = 1){
+      return (int)Math.Pow(num, pow);
+    }
+
   }
   enum firstEnum
   {
@@ -57,5 +76,7 @@ namespace cSharpPractice
     fifth = 5,
     tenth = 10
   };
+
+
 
 }
