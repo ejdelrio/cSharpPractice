@@ -77,6 +77,7 @@ namespace cSharpPractice
     }
     public static void variableNumberOfArguments(int num, params string[] args)
     {
+      Console.WriteLine(num);
       for (int i = 0; i < args.Length; i++)
       {
         Console.WriteLine(args[i]);
@@ -90,9 +91,11 @@ namespace cSharpPractice
 
     public delegate int CallBack(int a, int b);
 
+
     public static int callBackExample(int a, int b, CallBack cb) {
       return cb(a, b);
     }
+
 
   }
   enum firstEnum
